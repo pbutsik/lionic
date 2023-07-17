@@ -67,6 +67,49 @@ body {
     cursor: pointer;
 }
 
+/* добавилось описание кнопки еще одно (до этого описывали в header), в секции продивнутый css */
+.btn {
+    position: relative;
+    outline: none;
+    border-radius: none;
+    padding: 16px 35px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #3172B9;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: inherit;
+    border: 1px solid #3172B9;
+    outline: none;
+    opacity: 0;
+}
+
+.btn:focus::after {
+    opacity: 1;
+}
+
+.btn:hover {
+    background-color: #71A7E2;
+}
+
+.btn:active {
+    background-color: #0E3B6C;
+}
+
+.btn:active::after {
+    opacity: 0;
+}
+
 .flex {
     display: flex;
 }
@@ -106,9 +149,39 @@ body {
 }
 
 .header-link {
+    position: relative;
     font-weight: 600;
     color: #1C1C1C;
     font-size: 15px;
+}
+
+.header-link:focus {
+    outline-offset: 2px;
+    outline: 1px solid #71A7E2;
+}
+
+.header-link:hover {
+    color: #71A7E2;
+}
+
+.header-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #3172B9;
+    opacity: 0;
+}
+
+.header-link:active {
+    color: #3172B9;
+    outline: none;
+}
+
+.header-link:active::after {
+    opacity: 1;
 }
 
 .header-container {
@@ -219,12 +292,22 @@ body {
     border: 1px solid #E4E4E4;
 }
 
+.services-item:hover {
+    border-color: #3172B9;
+    background-color: #3172B9;
+}
+
 .services-items {
     column-gap: 30px;
 }
 
 .services-item-icon {
+    fill: #3172B9;
     margin-bottom: 25px;
+}
+
+.services-item:hover .services-item-icon {
+    fill: #fff;
 }
 
 .services-item-title {
@@ -236,6 +319,10 @@ body {
     color: #1C1C1C;
 }
 
+.services-item:hover .services-item-title {
+    color: #fff;
+}
+
 .services-item-descr {
     margin: 0;
     text-align: center;
@@ -243,6 +330,11 @@ body {
     line-height: 150%;
     color: #787878;
 }
+
+.services-item:hover .services-item-descr {
+    color: #fff;
+}
+
 /* services */
 
 /* articles */
@@ -295,6 +387,60 @@ body {
     font-size: 14px;
     line-height: 150%;
 }
+
+.blog-preview-link {
+    position: relative;
+    width: 100%;
+}
+
+.blog-preview-link:focus {
+    background-color: #71A7E2;
+}
+
+.blog-preview-link:focus .blog-preview-title {
+    color: #fff;
+}
+
+.blog-preview-link:focus .blog-preview-descr {
+    color: #fff;
+}
+
+.blog-preview-link:focus .blog-preview-time {
+    color: #fff;
+}
+
+.blog-preview-link:hover {
+    background-color: #3172B9;
+}
+
+.blog-preview-link:hover .blog-preview-title {
+    color: #fff;
+}
+
+.blog-preview-link:hover .blog-preview-descr {
+    color: #fff;
+}
+
+.blog-preview-link:hover .blog-preview-time {
+    color: #fff;
+}
+
+.blog-preview-link:active {
+    background-color: #0E3B6C;
+}
+
+.blog-preview-link:active .blog-preview-title {
+    color: #fff;
+}
+
+.blog-preview-link:active .blog-preview-descr {
+    color: #fff;
+}
+
+.blog-preview-link:active .blog-preview-time {
+    color: #fff;
+}
+
 /* articles */
 
 /* clients */
@@ -413,6 +559,20 @@ body {
     line-height: 180%;
     color: #787878;
 }
+
+.contscts-item-link:focus {
+    outline: 1px solid #71A7E2;
+}
+
+.contscts-item-link:hover {
+    color: #71A7E2;
+}
+
+.contscts-item-link:active {
+    outline: none;
+    color: #0E3B6C;
+}
+
 /* contacts */
 
 /* join-us */
@@ -442,6 +602,20 @@ body {
     height: 60px;
 }
 
+.form-input:focus {
+    outline: none;
+    border-color: #71A7E2;
+    background-color: rgba(113, 167, 226, 0.20);
+}
+
+.form-input:hover {
+    border-color: #71A7E2;
+}
+
+.form-input:active {
+    border-color: #0E3B6C;
+}
+
 .form-select {
     border-radius: 50px;
     border: 1px solid #DADADA;
@@ -449,6 +623,20 @@ body {
     padding: 16px 28px;
     width: 251px;
     height: 60px;
+}
+
+.form-select:focus {
+    outline: none;
+    border-color: #71A7E2;
+    background-color: rgba(113, 167, 226, 0.20);
+}
+
+.form-select:hover {
+    border-color: #71A7E2;
+}
+
+.form-select:active {
+    border-color: #0E3B6C;
 }
 
 .form-textarea {
@@ -459,6 +647,20 @@ body {
     padding: 16px 28px;
     width: 100%;
     height: 100%;
+}
+
+.form-textarea:focus {
+    outline: none;
+    border-color: #71A7E2;
+    background-color: rgba(113, 167, 226, 0.20);
+}
+
+.form-textarea:hover {
+    border-color: #71A7E2;
+}
+
+.form-textarea:active {
+    border-color: #0E3B6C;
 }
 
 .form-top {
