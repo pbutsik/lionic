@@ -48,11 +48,14 @@ img {
 }
 
 body {
-    min-width: 1200px;
+    min-width: 320px;
     font-family: "OpenSans", sans-serif;
     font-weight: 400;
 }
 
+:root {
+    --gap: 30px
+}
 /* glob */
 .list-reset {
     margin: 0;
@@ -117,9 +120,10 @@ body {
 }
 
 .container {
-    width: 1200px;
+    max-width: 1200px;
     padding: 0 15px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .section-title {
@@ -287,11 +291,30 @@ body {
     text-align: center;
 }
 
+.services-list {
+    --offsets: 3;
+    gap: var(--gap);
+    flex-wrap: wrap;
+}
+
+/* @media (max-width: 1024px) {
+    .services-list {
+        --offsets: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-list {
+        --offsets: 1;
+    }
+} */
+
 .services-item {
     flex-direction: column;
     align-items: center;
     padding: 60px 30px;
-    width: 270px;
+    /* width: 270px; */
+    width: calc((100% - (var(--gap) * var(--offsets))) / (var(--offsets) + 1));
     border-radius: 5px;
     border: 1px solid #E4E4E4;
     transition: background-color 0.4s ease-in-out, border-color 0.2s ease-in-out;
@@ -302,9 +325,7 @@ body {
     background-color: #3172B9;
 }
 
-.services-items {
-    column-gap: 30px;
-}
+
 
 .services-item-icon {
     fill: #3172B9;
@@ -352,10 +373,12 @@ body {
 
 .article-list {
     flex-wrap: wrap;
-    column-gap: 30px;
+    --offsets: 1;
+    gap: var(--gap);
 }
 .articles-item {
-    width: 570px;
+    /* width: 570px; */
+    width: calc((100% - (var(--gap) * var(--offsets))) / (var(--offsets) + 1));
     margin-bottom: 30px;
 }
 
@@ -460,16 +483,19 @@ body {
     border-bottom: 1px solid #DADADA;
 }
 
+.clients-list {
+    gap: var(--gap);
+    flex-wrap: wrap;
+    --offsets: 2;
+}
+
 .clients-item {
     flex-direction: column;
-    width: 370px;
+    /* width: 370px; */
+    width: calc((100% - (var(--gap) * var(--offsets))) / (var(--offsets) + 1));
     padding: 50px 36px;
     padding-bottom: 30px;
     border: 1px solid #E4E4E4;
-}
-
-.clients-list {
-    column-gap: 30px;
 }
 
 .clients-item-descr {
@@ -525,9 +551,16 @@ body {
     font-style: normal;
 }
 
+.contacts-list {
+    column-gap: var(--gap);
+    flex-wrap: wrap;
+    --offsets: 2;
+}
+
 .contacts-item {
     flex-direction: column;
-    width: 370px;
+    /* width: 370px; */
+    width: calc((100% - (var(--gap) * var(--offsets))) / (var(--offsets) + 1));
     background-position: left top;
     background-repeat: no-repeat;
     background-size: 29px 29px;
@@ -544,10 +577,6 @@ body {
 
 .contacts-item-mail {
     background-image: url("../images/mail.svg");
-}
-
-.contacts-list {
-    column-gap: 30px;
 }
 
 .contacts-item-caption {
